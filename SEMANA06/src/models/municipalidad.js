@@ -8,6 +8,8 @@ export default () => conexion.define(
             allowNull: false,
             type: DataTypes.INTEGER,
             primaryKey: true,
+            autoIncrement: true,
+            unique: true,
             field: 'id',
         },
         municipalidadNombre: {
