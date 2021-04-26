@@ -1,6 +1,7 @@
 import express from 'express'
 import { json } from "body-parser"
 import { conexion } from "./sequealize"
+import * as prueba from "./relaciones"
 
 export default class Server {
     constructor() {
@@ -15,8 +16,8 @@ export default class Server {
         this.app.listen(this.port, async () => {
             console.log(`Servidor corriendo en: http//:127.0.0.1:${this.port}`);
             try {
-                await conexion.sync();
-                console.log("BNase datos sincronizada correctamente");
+                await conexion.sync(); //{ force: true }
+                console.log("Base datos sincronizada correctamente");
             } catch (error) {
                 console.log(error)
             }
